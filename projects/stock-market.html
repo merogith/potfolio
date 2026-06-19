@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>US Stock-Market Valuation &amp; Risk — Meriç Erler</title>
+  <meta name="description" content="A 150+ year analysis testing whether valuation predicts long-run stock returns, and quantifying drawdown risk. Python, statsmodels OLS, SQL window functions." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo" aria-label="Meriç Erler — home">
+        <span class="nav__mark">ME</span><span class="nav__name">Meriç Erler</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="btn btn--ghost btn--sm" href="../assets/CV_Meric_Erler.pdf" target="_blank" rel="noopener">CV</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="case">
+      <a class="case__back" href="../index.html#work">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        All work
+      </a>
+
+      <header class="case__head reveal">
+        <span class="card__tag card__tag--data">Data · Project 3 · real data</span>
+        <h1 class="case__title">US Stock-Market Valuation &amp; Risk</h1>
+        <p class="case__tagline">Does today's valuation tell you anything about tomorrow's returns? 150+ years of real market data, put to the test.</p>
+        <div class="case__meta">
+          <a class="btn btn--ghost btn--sm" href="https://github.com/merogith/DataAnalysis/blob/main/project-3-finance/analysis.ipynb" target="_blank" rel="noopener">View the notebook</a>
+          <a class="btn btn--ghost btn--sm" href="https://github.com/merogith/DataAnalysis/tree/main/project-3-finance" target="_blank" rel="noopener">GitHub folder</a>
+        </div>
+      </header>
+
+      <div class="case__statband reveal">
+        <span class="stat"><b>150+ yrs</b>real market data</span>
+        <span class="stat"><b>p ≈ 1e-40</b>valuation → returns</span>
+        <span class="stat"><b>top 5%</b>CAPE today</span>
+        <span class="stat"><b>~2.4%/yr</b>long-run real growth</span>
+        <span class="stat"><b>−81%</b>worst drawdown</span>
+        <span class="stat"><b>~0</b>stock–gold corr.</span>
+      </div>
+
+      <section class="case__section reveal">
+        <h2>The question</h2>
+        <p>Every investor eventually asks whether the market is "expensive" — and whether that should change what they expect. This project tackles it empirically: across more than 150 years of real data, does <strong>valuation actually predict long-run returns</strong>, and how much <strong>downside risk</strong> are you signing up for by holding equities?</p>
+      </section>
+
+      <section class="case__section reveal">
+        <h2>The data</h2>
+        <p>Real, public market data spanning a century and a half — Robert Shiller's price/earnings/CAPE series, plus CBOE and LBMA (gold) data. I loaded and shaped it in <strong>SQLite using window functions</strong>, then ran the statistics in Python. This is genuinely messy, long-horizon data: regime changes, gaps, and inflation adjustment all have to be handled before any model is trustworthy.</p>
+      </section>
+
+      <section class="case__section reveal">
+        <h2>Approach &amp; method</h2>
+        <ul>
+          <li>Built a <strong>forward 10-year real-return</strong> series with SQL window functions.</li>
+          <li>Regressed forward returns on starting valuation (<strong>CAPE</strong>) using OLS in <code>statsmodels</code>, reporting p-values and R².</li>
+          <li>Quantified the long-run real growth rate, the maximum drawdown on record, and the <strong>stock–gold correlation</strong> as a diversification check.</li>
+        </ul>
+      </section>
+
+      <section class="case__section reveal">
+        <h2>What I found</h2>
+        <ul>
+          <li>Valuation has historically tracked returns: a higher starting CAPE was followed by <strong>lower real returns over the next ten years</strong>, and the relationship is overwhelmingly significant (<strong>p ≈ 1e-40</strong>).</li>
+          <li>Today's CAPE sits in the <strong>top 5%</strong> of all readings on record.</li>
+          <li>Long-run real growth has been about <strong>2.4% per year</strong>.</li>
+          <li>The worst drawdown on record was <strong>−81%</strong> — the risk you accept for that growth.</li>
+          <li>Gold's correlation with stocks is <strong>near zero</strong>, making it a genuine diversifier.</li>
+        </ul>
+        <div class="case__callout">
+          <p>Valuation is a <strong>long-horizon signal, not a timing tool</strong>: it says a great deal about the next decade and almost nothing about the next month.</p>
+        </div>
+      </section>
+
+      <section class="case__section reveal">
+        <h2>Why it matters</h2>
+        <p>Beyond the finance, this is a demonstration of the full analyst loop on hard data: wrangling century-scale series, using SQL window functions, applying <strong>proper statistical inference</strong> rather than eyeballing a chart — and, most importantly, turning the result into something a person can act on (set realistic return expectations, budget for drawdowns, diversify deliberately).</p>
+      </section>
+
+      <section class="case__section reveal">
+        <h2>Tech &amp; skills</h2>
+        <ul class="tags tags--sm">
+          <li>Python</li><li>pandas</li><li>statsmodels (OLS)</li><li>SQLite window functions</li><li>matplotlib / seaborn</li><li>Shiller · CBOE · LBMA data</li>
+        </ul>
+      </section>
+
+      <div class="case__cta reveal">
+        <a class="btn btn--ghost" href="../index.html#work">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          All work
+        </a>
+        <span class="spacer"></span>
+        <a class="btn btn--ghost" href="pharma-crm.html">Next: Pharma CRM →</a>
+        <a class="btn btn--primary" href="mailto:mericerler@gmail.com">Get in touch</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer"><p>© <span id="year">2026</span> Meriç Erler · Berlin</p></footer>
+  <script src="../script.js" defer></script>
+</body>
+</html>
