@@ -5,12 +5,27 @@ frameworks. Open it, edit it, deploy it anywhere static.
 
 ```
 website/
-├── index.html      ← all content (edit text here)
-├── styles.css      ← design system (colors live in :root at the top)
-├── script.js       ← theme toggle, mobile nav, scroll reveals
+├── index.html         ← homepage: hero, nav cards, about, projects, coaching, contact
+├── about.html         ← the longer personal story
+├── master-cv.html     ← the Master CV (live web CV + source for the PDF)
+├── one-pager-cv.html  ← copy-me template for a job-tailored one-page CV
+├── styles.css         ← design system (colors live in :root at the top)
+├── cv-print.css       ← print/PDF styling for the CV pages only
+├── script.js          ← theme toggle, mobile nav, scroll reveals
+├── CV-SYSTEM.md       ← how the job-application system works (read this)
+├── projects/          ← case-study pages (3 data + 4 games)
+├── coaching/          ← standalone financial-coaching site (EN + tr/)
 └── assets/
-    └── CV_Meric_Erler.pdf
+    ├── CV_Meric_Erler.pdf   ← regenerated from master-cv.html (Print → Save as PDF)
+    └── charts/              ← analysis chart images used in the case studies
 ```
+
+## CV & job-application system
+
+The CV is now editable in the repo. `master-cv.html` is the single source of truth and
+doubles as the live "web CV"; regenerate `assets/CV_Meric_Erler.pdf` by opening it and
+choosing **Print → Save as PDF**. For each application, duplicate `one-pager-cv.html` and
+fill in the `<!-- TAILOR -->` blocks. The full workflow is in **`CV-SYSTEM.md`**.
 
 ## Preview locally
 
@@ -48,8 +63,9 @@ A custom domain (e.g. `mericerler.dev`) can be pointed at GitHub Pages later in 
 
 ## Notes
 
-- **Phone number is intentionally omitted** from the public site (it's on the CV that
-  goes out with applications) — public web pages invite spam and scraping.
+- **Phone number is intentionally omitted** from the site and the CV pages for now —
+  public web pages invite spam and scraping. To add it to the PDF, drop it into the
+  contact band of `master-cv.html` in one place, then re-export.
 - **No transcripts, diplomas, IELTS, or reference letters** are published here, by design
   (privacy — for you and your referees). They stay private inputs for applications.
 - The **About** copy is a solid first draft written *for* you — it should be rewritten in

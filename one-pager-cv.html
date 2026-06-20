@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One-page CV (template) — Meriç Erler</title>
+  <meta name="description" content="Job-tailored one-page CV template for Meriç Erler. Duplicate per application and edit the TAILOR sections." />
+  <meta name="robots" content="noindex" />
+  <!-- ============================================================
+       JOB-TAILORED ONE-PAGER — TEMPLATE
+       This is a COPY-ME file. For each application:
+         1. Duplicate this file (e.g. one-pager-cv-<company>.html), keep it
+            out of the live site or in an /applications folder.
+         2. Edit every <!-- TAILOR --> block below using the job ad.
+         3. Pull facts only from master-cv.html — never invent.
+         4. Open it and Print → Save as PDF (it is tuned to ONE A4 page).
+       See CV-SYSTEM.md for the full workflow.
+       ============================================================ -->
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232f6b4f'/><text x='50' y='68' font-family='Georgia,serif' font-size='44' fill='%23faf8f3' text-anchor='middle'>ME</text></svg>" />
+
+  <script>try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="cv-print.css" />
+</head>
+<body class="onepager">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== NAV (hidden on print) ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Meriç Erler — home">
+        <span class="nav__mark">ME</span>
+        <span class="nav__name">Meriç Erler</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="master-cv.html">Master CV</a>
+        <a href="index.html#work">Data</a>
+        <a href="index.html#games">Games</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="btn btn--ghost btn--sm" href="master-cv.html">Master CV</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="case cv">
+
+    <!-- ===== HEADER ===== -->
+    <header class="case__head reveal">
+      <!-- TAILOR ▸ headline: echo the job title from the ad
+           (e.g. "Data Analyst — Game Economy & F2P Systems"). -->
+      <h1 class="case__title" style="margin-bottom:6px;">Meriç Erler</h1>
+      <p class="cv-role">Data &amp; Business-Intelligence Analyst · Berlin</p>
+
+      <p class="cv-contact">
+        <a href="mailto:mericerler@gmail.com">mericerler@gmail.com</a><span class="sep">·</span>
+        <a href="https://www.linkedin.com/in/mericerler" target="_blank" rel="noopener">linkedin.com/in/mericerler</a><span class="sep">·</span>
+        <a href="https://github.com/merogith" target="_blank" rel="noopener">github.com/merogith</a><span class="sep">·</span>
+        <span>Berlin · EU work-authorized · EN / TR</span>
+      </p>
+
+      <div class="cv-actions">
+        <a class="btn btn--ghost btn--sm" href="master-cv.html">← Back to Master CV</a>
+      </div>
+    </header>
+
+    <!-- ===== PROFILE ===== -->
+    <section class="case__section reveal">
+      <h2>Profile</h2>
+      <!-- TAILOR ▸ 2–3 sentences aimed at THIS role. Lead with the strongest
+           match in the ad. Name the one case study you built for this job. -->
+      <p class="cv-profile">
+        Data &amp; BI analyst who finds what actually matters in messy data and makes the decision clear —
+        with three years across pharma, edtech and equity research. <strong>[TAILOR: one sentence tying
+        your background to this role's core need.]</strong> I also ship tested browser games in my own time,
+        so I read systems from both the data and the build.
+      </p>
+    </section>
+
+    <!-- ===== CORE SKILLS ===== -->
+    <section class="case__section reveal">
+      <h2>Core skills</h2>
+      <!-- TAILOR ▸ keep the groups the ad asks for; reorder so the most-wanted is first.
+           Pull only skills that are also true on master-cv.html. -->
+      <div class="cv-skills">
+        <div class="cv-skill">
+          <span class="cv-skill__label">Data &amp; methods</span>
+          <span class="cv-skill__items">Python (pandas, scikit-learn, statsmodels) · SQL (window functions) · Excel (advanced) · A/B testing · regression · forecasting</span>
+        </div>
+        <div class="cv-skill">
+          <span class="cv-skill__label">BI &amp; reporting</span>
+          <span class="cv-skill__items">Power BI · Tableau · Looker Studio · Google Analytics · KPI design · stakeholder-ready reporting</span>
+        </div>
+        <div class="cv-skill">
+          <!-- TAILOR ▸ swap this third row for the domain the job is in
+               (e.g. "Game economy & F2P", "Pharma / CRM data", "Finance / valuation"). -->
+          <span class="cv-skill__label">Domain</span>
+          <span class="cv-skill__items">[TAILOR: domain skills most relevant to the role]</span>
+        </div>
+        <div class="cv-skill">
+          <span class="cv-skill__label">Build &amp; tools</span>
+          <span class="cv-skill__items">JavaScript · HTML / CSS · Supabase · Git</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SELECTED PROJECTS ===== -->
+    <section class="case__section reveal">
+      <h2>Selected projects</h2>
+      <!-- TAILOR ▸ keep the 2–3 projects closest to the role. If you built a
+           case study for this application, put it FIRST and link it. -->
+
+      <div class="cv-entry">
+        <div class="cv-entry__head">
+          <span class="cv-entry__role">[TAILOR: most-relevant project — link to the case study]</span>
+          <span class="cv-entry__meta">[tech]</span>
+        </div>
+        <ul class="cv-entry__bullets">
+          <li>[TAILOR: result bullet with a number.]</li>
+          <li>[TAILOR: method/impact bullet tied to the role.]</li>
+        </ul>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry__head">
+          <span class="cv-entry__role">Free-to-Play Game Economy &amp; Balance</span>
+          <span class="cv-entry__meta">Python · scikit-learn · SQL</span>
+        </div>
+        <ul class="cv-entry__bullets">
+          <li>Diagnosed economy health and two overpowered items (z-tests); modelled retention and predicted payers at <strong>AUC 0.80</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry__head">
+          <span class="cv-entry__role">US Stock-Market Valuation &amp; Risk</span>
+          <span class="cv-entry__meta">Python · OLS · SQL</span>
+        </div>
+        <ul class="cv-entry__bullets">
+          <li>150+ years of real data: higher valuation predicts lower forward returns (<strong>p ≈ 1e-40</strong>); quantified <strong>−81%</strong> worst drawdown.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE (trimmed) ===== -->
+    <section class="case__section reveal">
+      <h2>Experience</h2>
+      <!-- TAILOR ▸ keep the 3–4 roles that matter for this job; cut the rest.
+           Trim each to the 1–2 bullets that best match the ad. Full list on master-cv.html. -->
+
+      <div class="cv-entry">
+        <div class="cv-entry__head">
+          <span class="cv-entry__role">Omnichannel Data Analyst — Viatris Inc.</span>
+          <span class="cv-entry__meta">Dec 2022 – Sep 2023</span>
+        </div>
+        <ul class="cv-entry__bullets">
+          <li>Consolidated HCP records into one master record per person across <strong>70+ markets</strong> (Salesforce); fuzzy matching cut manual validation by <strong>40%</strong>. Cleaned 1M+ consents with SQL &amp; Excel.</li>
+        </ul>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry__head">
+          <span class="cv-entry__role">Business Intelligence Analyst — Saksı Kampüs</span>
+          <span class="cv-entry__meta">Dec 2021 – Oct 2022</span>
+        </div>
+        <ul class="cv-entry__bullets">
+          <li>Tracked retention/engagement/CAC KPIs in GA &amp; Looker Studio and steered Meta Ads spend; wrote the business plan and deck behind a seed crowdfunding raise.</li>
+        </ul>
+      </div>
+
+      <div class="cv-entry">
+        <div class="cv-entry__head">
+          <span class="cv-entry__role">Sales &amp; Financial Analysis Intern — Garanti BBVA Investment</span>
+          <span class="cv-entry__meta">Jul 2021 – Sep 2021</span>
+        </div>
+        <ul class="cv-entry__bullets">
+          <li>Built DCF and comparable-company valuation models and set target prices for sell-side equity research.</li>
+        </ul>
+      </div>
+
+      <!-- TAILOR ▸ Independent Financial Coach (2024–Present) — include this row when
+           the role values client-facing / communication / financial-literacy work. -->
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section class="case__section reveal">
+      <h2>Education</h2>
+      <div class="cv-entry">
+        <div class="cv-entry__head">
+          <span class="cv-entry__role">M.Sc. Corporate Management — University of Europe for Applied Sciences, Berlin</span>
+          <span class="cv-entry__meta">2022 – 2024</span>
+        </div>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry__head">
+          <span class="cv-entry__role">B.Sc. Environmental Engineering — METU, Ankara</span>
+          <span class="cv-entry__meta">2013 – 2021</span>
+        </div>
+      </div>
+      <p class="cv-contact" style="margin-top:6px;">
+        <span>Dual Portuguese / Turkish citizen · available immediately</span><span class="sep">·</span>
+        <span>English (full professional) · Turkish (native)</span>
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year">2026</span> Meriç Erler · Berlin</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

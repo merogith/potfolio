@@ -1,0 +1,127 @@
+/* ============================================================
+   cv-print.css — styling for the CV pages only
+   (master-cv.html and one-pager-cv.html).
+   Loaded AFTER styles.css so it can build on the design tokens.
+   Two jobs:
+     1. a few screen-only helpers for CV layout;
+     2. an @media print block that turns either page into a
+        clean PDF via the browser's "Print → Save as PDF".
+   Nothing here touches the rest of the site.
+   ============================================================ */
+
+/* ---------- Screen helpers ---------- */
+
+.cv-role {
+  font-family: var(--mono); color: var(--accent-warm);
+  font-size: .95rem; font-weight: 600; margin-top: 8px; letter-spacing: .01em;
+}
+.cv-contact {
+  display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center;
+  margin-top: 16px; font-size: .92rem; color: var(--muted);
+}
+.cv-contact a { color: var(--accent); border-bottom: 1px solid transparent; }
+.cv-contact a:hover { border-color: var(--accent); }
+.cv-contact .sep { color: var(--border); }
+.cv-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+
+/* tighten the shared section rhythm a little for a CV */
+.cv .case__section { margin-bottom: 30px; }
+.cv .timeline { margin-top: 6px; }
+
+/* ---------- Compact entry (projects on the master, everything on the one-pager) ---------- */
+.cv-entry { margin-bottom: 14px; break-inside: avoid; page-break-inside: avoid; }
+.cv-entry__head {
+  display: flex; justify-content: space-between; gap: 12px;
+  align-items: baseline; flex-wrap: wrap;
+}
+.cv-entry__role { font-size: 1.02rem; font-weight: 700; font-family: var(--serif); }
+.cv-entry__role a { transition: color .2s ease; }
+.cv-entry__role a:hover { color: var(--accent); }
+.cv-entry__meta { font-family: var(--mono); font-size: .8rem; color: var(--muted); white-space: nowrap; }
+.cv-entry__org { color: var(--muted); font-size: .9rem; margin: 1px 0 6px; }
+.cv-entry__org strong { color: var(--text); font-weight: 600; }
+.cv-entry__bullets { margin: 0 0 0 18px; }
+.cv-entry__bullets li { margin-bottom: 4px; }
+.cv-entry__bullets li strong { color: var(--text); font-weight: 600; }
+.cv-entry .tags--sm { margin-top: 8px; }
+
+/* ---------- Compact skills rows (one-pager) ---------- */
+.cv-skills { display: grid; gap: 9px; }
+.cv-skill { display: grid; grid-template-columns: 168px 1fr; gap: 14px; align-items: baseline; }
+.cv-skill__label { font-weight: 700; font-size: .85rem; color: var(--accent); }
+.cv-skill__items { color: var(--muted); font-size: .92rem; }
+.cv-skill__items strong { color: var(--text); font-weight: 600; }
+@media (max-width: 560px) { .cv-skill { grid-template-columns: 1fr; gap: 2px; } }
+
+/* lede / profile paragraph */
+.cv-profile { font-size: 1.06rem; line-height: 1.55; max-width: 70ch; }
+.cv-profile strong { color: var(--text); font-weight: 600; }
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+
+  /* Force the light palette no matter what the on-screen theme is,
+     so a CV printed from dark mode still comes out on white paper. */
+  :root, [data-theme="dark"] {
+    --bg: #ffffff; --surface: #ffffff; --surface-2: #f4f2ec;
+    --text: #18181b; --muted: #3f3f46; --border: #c9c4b8;
+    --accent: #28583f; --accent-soft: #e6f0ea; --accent-2: #28583f; --accent-warm: #a84e25;
+    --data: #28583f; --game: #8a3247; --research: #3c5a49; --eng: #7d531f;
+    --finance: #294675; --pharma: #5c3f77; --gaming: #8a3247;
+    --shadow: none; --shadow-lg: none;
+  }
+
+  html, body { background: #fff !important; color: #000; }
+  @page { size: A4; margin: 14mm; }
+
+  body { font-size: 10.5pt; line-height: 1.4; }
+
+  /* hide all site chrome and interactive-only bits */
+  .nav, .footer, .theme-toggle, .nav__burger, .skip-link,
+  .cv-actions, .case__back, .case__cta,
+  .card__ext, .card__links, .card__live { display: none !important; }
+
+  /* kill motion + shadows */
+  .reveal { opacity: 1 !important; transform: none !important; }
+  *, *::before, *::after { transition: none !important; box-shadow: none !important; }
+
+  a { color: #18181b !important; text-decoration: none; }
+  .case { max-width: none; margin: 0; padding: 0; }
+
+  /* keep entries, cards, figures and list rows from splitting across pages */
+  .tl, .card, .cv-entry, .edu__item, .honors li, .case__figure, .skill-group {
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  h1, h2, h3, .case__section h2, .dash__title { break-after: avoid; page-break-after: avoid; }
+
+  /* drop the decorative timeline rail/dots — a clean date column prints better */
+  .timeline::before, .tl::before { display: none !important; }
+  .timeline { margin-left: 0; }
+  .tl { grid-template-columns: 150px 1fr; gap: 16px; padding: 0 0 12px 0; }
+  .tl__what ul { margin-left: 16px; }
+  .tl__what li, .cv-entry__bullets li, .case__section li { color: #1c1c20; }
+
+  /* projects/skills collapse to a simple single column */
+  .cards, .cards--2, .skills { display: block !important; }
+
+  /* preserve the small colour accents that carry meaning */
+  .section__num, .case__section h2::before, .honors li::before,
+  .badge, .card__tag, .tl__type, .cv-skill__label {
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+}
+
+/* ---------- One-pager: squeeze everything onto a single sheet ---------- */
+.onepager .case__section { margin-bottom: 18px; }
+.onepager .case__head { margin-bottom: 18px; }
+@media print {
+  .onepager { font-size: 9.6pt; line-height: 1.34; }
+  .onepager .case__section { margin-bottom: 12px; }
+  .onepager .case__section h2 { font-size: 1.05rem; margin-bottom: 6px; }
+  .onepager .cv-entry { margin-bottom: 9px; }
+  .onepager .cv-entry__bullets li { margin-bottom: 2px; }
+  .onepager .case__head { margin-bottom: 12px; }
+  .onepager .cv-profile { font-size: 9.8pt; }
+}
