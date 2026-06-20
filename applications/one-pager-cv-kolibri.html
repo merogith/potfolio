@@ -76,12 +76,12 @@
     <section class="case__section reveal">
       <h2>Profile</h2>
       <p class="cv-profile">
-        I design and balance game economies, and I got here the long way round — three years pulling signal
-        out of messy data across pharma, edtech and equity research, plus a long habit of taking games apart
-        to see how their economies hold up. For this role I built a full economy-design study on
-        <strong>Idle Bank Tycoon</strong>: two live-ops levers modelled in a parameter-driven spreadsheet,
-        each with ROI math, a sensitivity grid and an A/B plan. I build and test my own browser games too,
-        so a system reads to me from the spreadsheet and from the code.
+        I design and balance game economies — and I got here the long way round. Three years pulling signal
+        out of messy data across pharma, edtech and equity research, plus a stubborn habit of taking games
+        apart to see how their economies hold up. To prove I could do the job, I built a full economy-design
+        study on <strong>Idle Bank Tycoon</strong>: two live-ops levers, each modelled end-to-end with ROI
+        math, a sensitivity grid and an A/B plan. I also build and ship my own browser games, so a system
+        reads to me two ways — from the spreadsheet and from the code.
       </p>
     </section>
 
@@ -122,8 +122,8 @@
           <span class="cv-entry__meta">Spreadsheet model · A/B design</span>
         </div>
         <ul class="cv-entry__bullets">
-          <li>Reconstructed the income-vs-upgrade-cost curve over 60 levels in a parameter-driven model (<strong>400+ linked formulas</strong>, one inputs tab) and diagnosed the late-game problem: idle cash sits at <strong>4,900–21,600×</strong> the next upgrade's cost.</li>
-          <li>Designed two live-ops levers — a hard-currency liquidity lock and income-scaled rewarded-ad tuning — with ROI math, a sensitivity grid and retention guardrails; modelled blended <strong>ARPDAU +15.5%</strong> (~$2M/yr at static DAU). I'd ship the ad tuning first and treat the loan as the bigger retention bet.</li>
+          <li>Found the late-game problem in the numbers: by level 60, idle cash piles up to <strong>4,900–21,600×</strong> the next upgrade's cost — progression stops mattering. Traced it by rebuilding the full income-vs-cost curve in a parameter-driven model (<strong>400+ linked formulas</strong>, one inputs tab).</li>
+          <li>Designed two live-ops levers to fix it — a hard-currency liquidity lock and income-scaled rewarded-ad tuning — and modelled each to blended <strong>ARPDAU +15.5%</strong> (~$2M/yr at static DAU), with a sensitivity grid and retention guardrails. My call: ship the ad tuning first, treat the loan as the bigger retention bet.</li>
         </ul>
       </div>
 
@@ -133,8 +133,8 @@
           <span class="cv-entry__meta">Python · scikit-learn · SQL</span>
         </div>
         <ul class="cv-entry__bullets">
-          <li>Measured economy health from telemetry (sinks recover only <strong>~63%</strong> of minted coins — mild inflation) and flagged two statistically <strong>overpowered</strong> premium items with proportion z-tests (61% win rate).</li>
-          <li>Built D1/D7/D30 retention cohorts and predicted paying players from first-3-day behaviour at <strong>AUC 0.80</strong>, mapping each finding to a balancing or onboarding fix.</li>
+          <li>Caught two premium items quietly breaking the game (<strong>61% win rate</strong>, significant on a z-test) and a slow coin inflation — sinks claw back only <strong>~63%</strong> of what's minted. Each finding shipped with the balancing fix, not just the chart.</li>
+          <li>Could flag a future payer from their first three days (<strong>AUC 0.80</strong>) using D1/D7/D30 cohorts — turning that into a concrete onboarding lever rather than a dashboard metric.</li>
         </ul>
       </div>
 
@@ -144,7 +144,7 @@
           <span class="cv-entry__meta">Python · statsmodels (OLS) · SQL</span>
         </div>
         <ul class="cv-entry__bullets">
-          <li>Tested 150+ years of real market data: higher valuation (CAPE) predicts <strong>lower</strong> forward 10-year real returns, significant at <strong>p ≈ 1e-40</strong>; quantified the worst real drawdown at <strong>−81%</strong>.</li>
+          <li>Showed across <strong>150+ years</strong> that expensive markets pay you back less: higher valuation (CAPE) predicts <strong>lower</strong> forward 10-year real returns (<strong>p ≈ 1e-40</strong>), with the worst real drawdown a brutal <strong>−81%</strong>. Built for a decision, not a paper.</li>
         </ul>
       </div>
 
