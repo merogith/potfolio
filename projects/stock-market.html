@@ -57,7 +57,7 @@
 
       <div class="case__statband reveal">
         <span class="stat"><b>150+ yrs</b>real market data</span>
-        <span class="stat"><b>p ≈ 1e-40</b>valuation → returns</span>
+        <span class="stat"><b>R² 0.11</b>valuation → returns</span>
         <span class="stat"><b>CAPE 30.8</b>top 5% ever</span>
         <span class="stat"><b>~2.4%/yr</b>long-run real growth</span>
         <span class="stat"><b>−81%</b>worst drawdown</span>
@@ -98,12 +98,12 @@
 
       <section class="case__section reveal">
         <h2>The question</h2>
-        <p>Every investor eventually asks whether the market is "expensive" — and whether that should change what they expect. This project tackles it empirically: across more than 150 years of real data, does <strong>valuation actually predict long-run returns</strong>, and how much <strong>downside risk</strong> are you signing up for by holding equities?</p>
+        <p>Every investor eventually asks whether the market is "expensive", and whether that should change what they expect. This project tackles it empirically: across more than 150 years of real data, does <strong>valuation predict long-run returns</strong>, and how much <strong>downside risk</strong> do you take on by holding equities?</p>
       </section>
 
       <section class="case__section reveal">
         <h2>The data</h2>
-        <p>Real, public market data spanning a century and a half — Robert Shiller's price/earnings/CAPE series, plus CBOE (VIX) and LBMA (gold) data, pulled with a reproducible script. The key cleaning decision: recent months store <code>0.0</code> as a placeholder for fundamentals that aren't reported yet, so treating those as real zeros would distort every average — I converted them to missing. This is genuinely messy, long-horizon data: regime changes, gaps, and inflation adjustment all have to be handled before any model is trustworthy.</p>
+        <p>Real, public market data spanning a century and a half: Robert Shiller's price/earnings/CAPE series, plus CBOE (VIX) and LBMA (gold) data, pulled with a reproducible script. The main cleaning decision: recent months store <code>0.0</code> as a placeholder for fundamentals that aren't reported yet, so treating those as real zeros would distort every average. I converted them to missing. This is long-horizon data with all the usual problems: regime changes, gaps, and inflation adjustment all have to be handled before any model is trustworthy.</p>
       </section>
 
       <section class="case__section reveal">
@@ -117,19 +117,19 @@
 
       <section class="case__section reveal">
         <h2>What I found</h2>
-        <p>Once inflation is removed, the index's price has grown only about <strong>2.4% a year</strong> — most of the headline growth comes from inflation and reinvested dividends, so return expectations should be set accordingly.</p>
+        <p>Once inflation is removed, the index's price has grown only about <strong>2.4% a year</strong>. Most of the headline growth comes from inflation and reinvested dividends, so return expectations should be set accordingly.</p>
         <figure class="case__figure">
           <img src="../assets/charts/stock-market/01_real_trend.png" alt="Real vs nominal S&P 500 on a log scale, 1871 to today" loading="lazy" />
           <figcaption class="case__figcap">The real trend is steady but modest; inflation accounts for most of the apparent growth.</figcaption>
         </figure>
 
-        <p>Starting valuation has tracked future returns: months with a <strong>higher CAPE were followed by lower real returns over the next decade</strong>, and the relationship is overwhelmingly significant (R² = 0.11, <strong>p ≈ 1e-40</strong>). Today's CAPE of 30.8 sits in the <strong>top 5%</strong> of all readings since 1881.</p>
+        <p>Starting valuation has tracked future returns: months with a <strong>higher CAPE were followed by lower real returns over the next decade</strong>. The relationship is statistically clear, though it explains only a modest share of the variation (R² = 0.11). Today's CAPE of 30.8 sits in the <strong>top 5%</strong> of all readings since 1881.</p>
         <figure class="case__figure">
           <img src="../assets/charts/stock-market/05_cape_vs_forward_return.png" alt="Scatter of starting CAPE against the real return over the following ten years, with today's value marked" loading="lazy" />
           <figcaption class="case__figcap">Each point is one month; the downward slope means a higher price paid was followed by a lower future return. Today's CAPE, marked in gold, is near the top of its range.</figcaption>
         </figure>
 
-        <p>Large losses are a normal part of the record, not an exception — in real terms the market has fallen as much as <strong>81%</strong> from a previous peak (the early 1930s). That's the risk you accept for the growth.</p>
+        <p>Large losses are a normal part of the record, not an exception. In real terms the market has fallen as much as <strong>81%</strong> from a previous peak (the early 1930s). That's the risk you accept for the growth.</p>
         <figure class="case__figure">
           <img src="../assets/charts/stock-market/04_drawdowns.png" alt="Underwater drawdown chart showing real losses from previous peaks, worst reaching minus 81 percent" loading="lazy" />
           <figcaption class="case__figcap">Deep drawdowns recur throughout the record, with the worst real loss reaching <strong>−81%</strong> (trough June 1932).</figcaption>
@@ -150,7 +150,7 @@
         <h2>Recommendation</h2>
         <p>For a long-term investor, the data supports three practical steps:</p>
         <ul>
-          <li><strong>Set return expectations</strong> around the below-average real returns implied by today's high valuation — not the recent past.</li>
+          <li><strong>Set return expectations</strong> around the below-average real returns implied by today's high valuation, not the recent past.</li>
           <li><strong>Pair equities with low-correlation assets</strong> such as gold or bonds to soften the drawdowns the record shows are inevitable.</li>
           <li><strong>Automate contributions and rebalancing</strong>, because the main risk the data exposes is behavioural: selling during the long stretches when the market is underwater.</li>
         </ul>

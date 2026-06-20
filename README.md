@@ -1,72 +1,46 @@
-# Meriç Erler — Portfolio Site
+# Meriç Erler — Portfolio
 
-A fast, dependency-free portfolio. Plain HTML + CSS + vanilla JS — no build step, no
-frameworks. Open it, edit it, deploy it anywhere static.
+A static personal site: data-analysis case studies, browser games, a financial-coaching
+section, and an editable CV. Plain HTML, CSS, and vanilla JavaScript — no build step, no
+frameworks, no dependencies.
 
 ```
-website/
-├── index.html         ← homepage: hero, nav cards, about, projects, coaching, contact
-├── about.html         ← the longer personal story
-├── master-cv.html     ← the Master CV (live web CV + source for the PDF)
-├── one-pager-cv.html  ← copy-me template for a job-tailored one-page CV
-├── styles.css         ← design system (colors live in :root at the top)
-├── cv-print.css       ← print/PDF styling for the CV pages only
-├── script.js          ← theme toggle, mobile nav, scroll reveals
-├── CV-SYSTEM.md       ← how the job-application system works (read this)
-├── projects/          ← case-study pages (3 data + 4 games)
-├── coaching/          ← standalone financial-coaching site (EN + tr/)
-└── assets/
-    ├── CV_Meric_Erler.pdf   ← regenerated from master-cv.html (Print → Save as PDF)
-    └── charts/              ← analysis chart images used in the case studies
+index.html          Landing page (hero, nav cards, about, projects, coaching, contact)
+about.html          The longer personal story
+master-cv.html      The Master CV (live web CV and source for the PDF)
+one-pager-cv.html   Template for a job-tailored one-page CV
+styles.css          Design system (theme variables in :root)
+cv-print.css        Print/PDF styling for the CV pages
+script.js           Theme toggle, mobile nav, scroll reveals
+CV-SYSTEM.md        How the CV / job-application system works
+projects/           Case studies (3 data + 4 games)
+coaching/           Standalone financial-coaching site (English + Turkish)
+assets/             CV PDF and chart images
 ```
 
-## CV & job-application system
+## Run locally
 
-The CV is now editable in the repo. `master-cv.html` is the single source of truth and
-doubles as the live "web CV"; regenerate `assets/CV_Meric_Erler.pdf` by opening it and
-choosing **Print → Save as PDF**. For each application, duplicate `one-pager-cv.html` and
-fill in the `<!-- TAILOR -->` blocks. The full workflow is in **`CV-SYSTEM.md`**.
+Open `index.html` directly, or serve the folder:
 
-## Preview locally
-
-Just double-click `index.html` — it works from the file system. For a cleaner local
-server (recommended, avoids any path quirks):
-
-```powershell
-# from the website/ folder, with Python installed:
+```
 python -m http.server 5500
-# then open http://localhost:5500
+# http://localhost:5500
 ```
 
-## Deploy free on GitHub Pages
+## CV system
 
-You already use GitHub (`merogith`), so this is the natural home.
+`master-cv.html` is the single source of truth and doubles as the live web CV. Regenerate
+`assets/CV_Meric_Erler.pdf` by opening it and choosing **Print → Save as PDF**. For each
+application, duplicate `one-pager-cv.html` and fill in the `<!-- TAILOR -->` blocks. The full
+workflow is in `CV-SYSTEM.md`.
 
-**Option A — main portfolio at `merogith.github.io`:**
-1. Create a repo named exactly `merogith.github.io`.
-2. Put the contents of this `website/` folder at the repo root.
-3. Push. It goes live at `https://merogith.github.io` within a minute.
+## Deploy
 
-**Option B — project page (e.g. `merogith.github.io/portfolio`):**
-1. Create a repo named `portfolio`, push these files.
-2. Repo → Settings → Pages → Source: `main` branch, `/root`.
-
-(Netlify / Vercel / Cloudflare Pages also work — drag-and-drop the folder.)
-
-A custom domain (e.g. `mericerler.dev`) can be pointed at GitHub Pages later in Settings → Pages.
-
-## Customize
-
-- **Text & projects:** all in `index.html`. To add a project, copy a `<article class="card">…</article>` block.
-- **Colors / theme:** edit the CSS variables in `:root` (light) and `[data-theme="dark"]` at the top of `styles.css`.
-- **Accent colors per category:** `--data`, `--game`, `--research`, `--eng` in `styles.css`.
+Any static host works (GitHub Pages, Netlify, Vercel, Cloudflare Pages). For GitHub Pages,
+push to a repository and enable Pages on the default branch in Settings → Pages.
 
 ## Notes
 
-- **Phone number is intentionally omitted** from the site and the CV pages for now —
-  public web pages invite spam and scraping. To add it to the PDF, drop it into the
-  contact band of `master-cv.html` in one place, then re-export.
-- **No transcripts, diplomas, IELTS, or reference letters** are published here, by design
-  (privacy — for you and your referees). They stay private inputs for applications.
-- The **About** copy is a solid first draft written *for* you — it should be rewritten in
-  your own voice once the voice questionnaire (`../01_questionnaire.md`, Section 5) is done.
+- The phone number is intentionally omitted from the public site and CV pages (spam/scraping).
+  Add it to the contact band of `master-cv.html` in one place if needed, then re-export the PDF.
+- Transcripts, diplomas, and reference letters are kept private and shared with hiring teams on request.

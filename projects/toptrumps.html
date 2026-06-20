@@ -68,11 +68,11 @@
     <header class="case__head reveal">
       <span class="card__tag card__tag--game">Game</span>
       <h1 class="case__title">Top Trumps</h1>
-      <p class="case__tagline">The classic stat-comparison card game — pass-and-play, or against a bot that counts cards.</p>
+      <p class="case__tagline">The classic stat-comparison card game: pass-and-play, or against a bot that counts cards.</p>
     </header>
 
     <div class="playstage reveal">
-      <p class="playstage__line">Plays in your browser — no install</p>
+      <p class="playstage__line">Plays in your browser, no install</p>
       <div class="playstage__actions">
         <a class="btn btn--primary btn--lg" href="https://merogith.github.io/Toptrumps/" target="_blank" rel="noopener">Play</a>
         <a class="btn btn--ghost btn--lg" href="https://github.com/merogith/Toptrumps" target="_blank" rel="noopener">GitHub</a>
@@ -88,13 +88,13 @@
 
     <section class="case__section reveal">
       <h2>How to play</h2>
-      <p>Each round you look at your top card and pick the stat you think beats your opponent's hidden card — highest value takes both cards. Play it locally as two-player <strong>pass-and-play</strong>, or solo against <strong>Easy, Medium, or Hard</strong> bots, across six themed decks.</p>
+      <p>Each round you look at your top card and pick the stat you think beats your opponent's hidden card; the highest value takes both cards. Play it locally as two-player <strong>pass-and-play</strong>, or solo against <strong>Easy, Medium, or Hard</strong> bots, across six themed decks.</p>
       <p>The Hard bot is the one to watch: it remembers every card that's already been played and uses that to pick the statistically best stat, so it gets sharper as the deck thins out. Pass-and-play puts a privacy gate between turns so the next player can't peek, and the whole thing is mobile-first and accessible.</p>
     </section>
 
     <section class="case__section reveal">
       <h2>Under the hood</h2>
-      <p>The engine is built as a pure function: it takes an immutable <code>GameSnapshot</code> and returns the next one, with no DOM and no global state. That one decision is what makes the game <strong>exhaustively testable</strong> — given a board, the outcome of a move is fixed and easy to assert, so I can check the rules without ever rendering anything.</p>
+      <p>The engine is built as a pure function: it takes an immutable <code>GameSnapshot</code> and returns the next one, with no DOM and no global state. That one decision is what makes the game <strong>easy to test thoroughly</strong>: given a board, the outcome of a move is fixed and easy to assert, so I can check the rules without ever rendering anything.</p>
       <div class="case__callout">
         <p>Because the rules are separated cleanly from the screen, the same engine is checked three ways: unit tests on the state machine, bot logic, and seeded RNG; smoke tests that play a full match in a DOM simulator; and Playwright driving a complete game end-to-end in a real browser.</p>
       </div>
@@ -116,7 +116,7 @@
   </main>
 
   <footer class="footer">
-    <p>© <span id="year">2026</span> Meriç Erler · Built from scratch · Berlin</p>
+    <p>© <span id="year">2026</span> Meriç Erler · Berlin</p>
   </footer>
 
   <script src="../script.js" defer></script>

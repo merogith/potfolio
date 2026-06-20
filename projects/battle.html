@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Battle — Turn-Based RPG with Online PvP — Meriç Erler</title>
-  <meta name="description" content="A Pokémon-style turn-based RPG with story mode, persistent saves, and online PvP on a Supabase backend — a custom vanilla-JS engine refined across 1,699+ commits. Plays in your browser." />
+  <meta name="description" content="A Pokémon-style turn-based RPG with story mode, persistent saves, and online PvP on a Supabase backend, built on a custom vanilla-JS engine. Plays in your browser." />
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232f6b4f'/><text x='50' y='68' font-family='Georgia,serif' font-size='44' fill='%23faf8f3' text-anchor='middle'>ME</text></svg>" />
 
@@ -72,7 +72,7 @@
     </header>
 
     <div class="playstage reveal">
-      <p class="playstage__line">Plays in your browser — no install</p>
+      <p class="playstage__line">Plays in your browser, no install</p>
       <div class="playstage__actions">
         <a class="btn btn--primary btn--lg" href="https://merogith.github.io/battle/battle.html" target="_blank" rel="noopener">Play</a>
         <a class="btn btn--ghost btn--lg" href="https://github.com/merogith/battle" target="_blank" rel="noopener">GitHub</a>
@@ -80,7 +80,7 @@
     </div>
 
     <div class="case__statband reveal">
-      <span class="stat"><b>1,699+</b>commits</span>
+      <span class="stat"><b>custom</b>engine, no framework</span>
       <span class="stat"><b>online</b>PvP (Supabase)</span>
       <span class="stat"><b>story mode</b>+ saves</span>
       <span class="stat"><b>deterministic</b>replay tests</span>
@@ -88,24 +88,24 @@
 
     <section class="case__section reveal">
       <h2>How to play</h2>
-      <p>It's a turn-based battler. You build a party, pick a move each turn, and trade hits until one side faints — move animations, status effects, and field hazards all factor in. There's a full story mode with saved progress, plus catch, PC, Underground, and Safari systems and boss arcs to work through.</p>
-      <p>One detail shapes every fight: HP and status fully restore between battles, but consumables only matter <em>inside</em> an encounter. So each fight is its own small puzzle — spend your items now or save them for the turn that decides it. Play through the campaign against the AI, or take on another person in <strong>online PvP</strong>.</p>
+      <p>It's a turn-based battler. You build a party, pick a move each turn, and trade hits until one side faints. Move animations, status effects, and field hazards all factor in. There's a full story mode with saved progress, plus catch, PC, Underground, and Safari systems and boss arcs to work through.</p>
+      <p>One detail shapes every fight: HP and status fully restore between battles, but consumables only matter <em>inside</em> an encounter. So each fight is its own small puzzle: spend your items now, or save them for the turn that decides it. Play through the campaign against the AI, or take on another person in <strong>online PvP</strong>.</p>
     </section>
 
     <section class="case__section reveal">
       <h2>Under the hood</h2>
-      <p>This is the project I've put the most into: a complete, stateful, networked game built solo and kept alive across <strong>1,699+ commits</strong> — design docs, database migrations, tests, and profiling, not a weekend prototype.</p>
+      <p>This is the project I've put the most into: a complete, stateful, networked game built and maintained solo, with design docs, database migrations, tests, and profiling behind it, not a weekend prototype.</p>
       <ul>
-        <li>A <strong>custom engine in vanilla JavaScript</strong> — the turn loop, move resolution, and status/hazard system are all hand-written, with no game framework underneath. Writing the rules myself means I know exactly how every edge case resolves.</li>
+        <li>A <strong>custom engine in vanilla JavaScript</strong>. The turn loop, move resolution, and status/hazard system are all hand-written, with no game framework underneath, so I know exactly how every edge case resolves.</li>
         <li>A <strong>Supabase / PostgreSQL backend</strong> with migrations handles the hard part: online PvP and saving progress. Two players acting on a shared, authoritative state is a different problem than a single-player loop, and most of the engineering effort lives here.</li>
         <li><strong>Performance profiling</strong> of the turn loop, move parsing, and memory, so the game stays responsive as the rule set grows.</li>
-        <li>A structured debug and QA system with a central issue ledger and <strong>spec-drift checks</strong> against the design docs — when the code and the design disagree, a check catches it instead of a player.</li>
+        <li>A structured debug and QA system with a central issue ledger and <strong>spec-drift checks</strong> against the design docs: when the code and the design disagree, a check catches it instead of a player.</li>
         <li>A PWA manifest so it installs and behaves like an app.</li>
       </ul>
       <div class="case__callout">
-        <p>The test suite uses <strong>deterministic replay</strong>: the same seed reproduces a run exactly. That's the part I'm proudest of — a bug someone hits once becomes a test I can replay forever, so it never quietly comes back.</p>
+        <p>The test suite uses <strong>deterministic replay</strong>: the same seed reproduces a run exactly. That's the part I'm proudest of. A bug someone hits once becomes a test I can replay forever, so it never quietly comes back.</p>
       </div>
-      <p>It's the same discipline I bring to data work, pointed at software: reproducibility, measurement, and a clear contract between the parts.</p>
+      <p>It's the same habit I bring to data work: make it reproducible, and measure it.</p>
     </section>
 
     <section class="case__section reveal">
@@ -123,7 +123,7 @@
   </main>
 
   <footer class="footer">
-    <p>© <span id="year">2026</span> Meriç Erler · Built from scratch · Berlin</p>
+    <p>© <span id="year">2026</span> Meriç Erler · Berlin</p>
   </footer>
 
   <script src="../script.js" defer></script>
