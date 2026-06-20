@@ -72,7 +72,7 @@
     </header>
 
     <div class="playstage reveal">
-      <p class="playstage__line">Plays in your browser — no install</p>
+      <p class="playstage__line">Plays in your browser, no install</p>
       <div class="playstage__actions">
         <a class="btn btn--primary btn--lg" href="https://merogith.github.io/rocketio/" target="_blank" rel="noopener">Play</a>
         <a class="btn btn--ghost btn--lg" href="https://github.com/merogith/rocketio" target="_blank" rel="noopener">GitHub</a>
@@ -88,15 +88,15 @@
 
     <section class="case__section reveal">
       <h2>How to play</h2>
-      <p>You pick one of 14 world powers and play in real time on a hex map. Expand your borders, run a missile economy — factories build, launchers fire, anti-air intercepts — and read the map through fog of war, where you only see what your units can see. There are five ways to win, plus a single-player campaign and a tutorial to get started.</p>
-      <p>Up to six AI opponents share the map with you. They don't all play the same: each runs a different doctrine, and they shift their plans in response to what you're doing, so a rush and a slow build are genuinely different games.</p>
+      <p>You pick one of 14 world powers and play in real time on a hex map. Expand your borders, run a missile economy (factories build, launchers fire, anti-air intercepts), and read the map through fog of war, where you only see what your units can see. There are five ways to win, plus a single-player campaign and a tutorial to get started.</p>
+      <p>Up to six AI opponents share the map with you. They don't all play the same: each runs a different doctrine, and they shift their plans in response to what you're doing, so a rush plays out very differently from a slow build.</p>
     </section>
 
     <section class="case__section reveal">
       <h2>Under the hood</h2>
-      <p>The interesting constraint here is that almost nothing is a fixed asset. There are no image files, no pre-built maps, and no recorded music — vanilla JS modules and an HTML5 Canvas, and the game assembles its world in code at runtime. Two parts of that are worth pulling apart.</p>
-      <p><strong>Procedural map generation.</strong> Every match starts from a fresh map built with gradient noise: the same technique that gives terrain a natural, rolling shape instead of random static. By tuning it, the generator produces recognisably different worlds — solid continents, scattered archipelagos, inland seas — so the strategy changes with the geography rather than the map being the same board every time.</p>
-      <p><strong>AI that adapts.</strong> Each opponent follows a doctrine — an aggressive missile-spammer plays nothing like a turtling defender — and re-weighs its priorities as the game state changes. Because the world is generated, the AI can't memorise an opening; it has to actually respond to the map and to you, which is what keeps single-player matches from feeling scripted.</p>
+      <p>The interesting constraint here is that almost nothing is a fixed asset. There are no image files, no pre-built maps, and no recorded music. It's vanilla JS modules and an HTML5 Canvas, and the game assembles its world in code at runtime. Two parts of that are worth pulling apart.</p>
+      <p><strong>Procedural map generation.</strong> Every match starts from a fresh map built with gradient noise: the same technique that gives terrain a natural, rolling shape instead of random static. By tuning it, the generator produces recognisably different worlds (solid continents, scattered archipelagos, inland seas), so the strategy changes with the geography rather than the board being the same every time.</p>
+      <p><strong>AI that adapts.</strong> Each opponent follows a doctrine (an aggressive missile-spammer plays nothing like a turtling defender) and re-weighs its priorities as the game state changes. Because the world is generated, the AI can't memorise an opening; it has to respond to the map and to you, which keeps single-player matches from feeling scripted.</p>
       <div class="case__callout">
         <p>Generating everything in code is harder up front, but it means there's no asset bottleneck: a new map type or unit is a few lines, not a pile of art. The trade-off is real, and tuning it is most of the work.</p>
       </div>
@@ -118,7 +118,7 @@
   </main>
 
   <footer class="footer">
-    <p>© <span id="year">2026</span> Meriç Erler · Built from scratch · Berlin</p>
+    <p>© <span id="year">2026</span> Meriç Erler · Berlin</p>
   </footer>
 
   <script src="../script.js" defer></script>
