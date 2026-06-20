@@ -47,3 +47,19 @@ no build step, no tooling. You author once, then tailor per application.
 - One source of truth: facts flow **from** `master-cv.html` **to** the one-pager, never the other way.
 - No fabrication: numbers, dates, and titles must match the Master CV.
 - Phone number is intentionally omitted from the CV pages — add it in one place (the contact band) if you want it on the PDF.
+
+## Appendix — Idle Bank Tycoon case study (ready to publish)
+
+Built as the application case study for a game-economy role (not yet applied). **Kept off the public portfolio until the outcome is known** — per the rule above, it joins `projects/` only after a rejection. It still reaches the employer via the GitHub repo link and the tailored one-pager's "selected projects" slot.
+
+Repo: `github.com/merogith/IdleBankTycoonCaseStudy`
+
+When it's time to publish, copy `projects/game-economy.html` as the template and fill in:
+- **Title:** Idle Bank Tycoon — Economy Design Case Study (2026)
+- **Summary:** A self-directed, parameter-driven economy model + report reconstructing Idle Bank Tycoon's economy and designing interventions.
+- **Bullets:**
+  - 7-tab, parameter-driven model — **400+ live formulas** from a single source-of-truth tab — reconstructing the income-vs-upgrade-cost curve over **60 levels**, diagnosing a late-game cash-surplus problem.
+  - Two designed interventions — a soft-currency sink ("Loan Desk") and income-scaled rewarded-ad tuning → at default assumptions, **+41.7% rewarded-ad revenue** and **+15.5% blended ARPDAU** (≈ $2M/yr at 200k DAU).
+  - Framed both as **A/B tests** evaluating retention and ARPU jointly, with anti-inflation guardrails; sourced data kept transparently separate from assumptions (no fabricated telemetry).
+- **Tech tags:** Spreadsheet modelling · economy source/sink design · A/B test design.
+- After creating the page: add a card to the `#work` grid in `index.html`, and restore the matching entry on `master-cv.html`.
