@@ -18,6 +18,9 @@
   <meta name="twitter:image" content="https://merogith.github.io/Portfolio/assets/charts/game-economy/01_player_mix.png" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232f6b4f'/><text x='50' y='68' font-family='Georgia,serif' font-size='44' fill='%23faf8f3' text-anchor='middle'>ME</text></svg>" />
   <script>try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}</script>
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+  <meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#141418" media="(prefers-color-scheme: dark)" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
@@ -123,25 +126,25 @@
         <h2>What I found</h2>
         <p>The economy is <strong>mildly inflationary</strong>: sinks recover only ~63% of every coin minted, so wallets steadily swell and the soft currency slowly loses value (net +6.8M coins over the window).</p>
         <figure class="case__figure">
-          <img src="../assets/charts/game-economy/03_economy_flow.png" alt="Currency faucets versus sinks over time, with a growing cumulative surplus" loading="lazy" />
+          <img width="1080" height="697" src="../assets/charts/game-economy/03_economy_flow.png" alt="Currency faucets versus sinks over time, with a growing cumulative surplus" loading="lazy" />
           <figcaption class="case__figcap">Faucets out-pace sinks and the surplus only grows, the signature of mild inflation.</figcaption>
         </figure>
 
         <p>Two premium items are <strong>statistically overpowered</strong>: Phoenix Blade wins 61.3% and Aegis Shield 59.4%, with confidence intervals entirely above 50%. Because both are paid, the game reads as mildly <strong>pay-to-win</strong>. Rusty Dagger is the opposite, an underpowered starter trap at 41.8%.</p>
         <figure class="case__figure">
-          <img src="../assets/charts/game-economy/04_item_balance.png" alt="Item win rates with 95% confidence intervals against a fair 50% line" loading="lazy" />
+          <img width="972" height="587" src="../assets/charts/game-economy/04_item_balance.png" alt="Item win rates with 95% confidence intervals against a fair 50% line" loading="lazy" />
           <figcaption class="case__figcap">Bars are 95% confidence intervals; the dashed line is the fair 50%. Two premium items sit clearly above it.</figcaption>
         </figure>
 
         <p>Retention drops hard after the first day: <strong>D1 47%, D7 18%, D30 4%</strong>. About half of installs never return on day one, but the players who survive it are sticky, so the biggest lever is the first session.</p>
         <figure class="case__figure">
-          <img src="../assets/charts/game-economy/06_retention_curve.png" alt="Retention curve showing a sharp drop after day one" loading="lazy" />
+          <img width="1082" height="477" src="../assets/charts/game-economy/06_retention_curve.png" alt="Retention curve showing a sharp drop after day one" loading="lazy" />
           <figcaption class="case__figcap">About half of installs never return on day 1, the steepest part of the whole funnel.</figcaption>
         </figure>
 
         <p>Monetisation is small but <strong>predictable</strong>: only 5.8% of players ever pay (ARPPU $15.61), but a logistic model predicts payers from first-3-day behaviour alone with <strong>AUC 0.80</strong> and ~74% accuracy.</p>
         <figure class="case__figure">
-          <img src="../assets/charts/game-economy/08_payer_model.png" alt="ROC curve and feature importance for the logistic payer-prediction model" loading="lazy" />
+          <img width="1302" height="466" src="../assets/charts/game-economy/08_payer_model.png" alt="ROC curve and feature importance for the logistic payer-prediction model" loading="lazy" />
           <figcaption class="case__figcap">Payers are sharply distinguished by early engagement, enough to target a fair early offer.</figcaption>
         </figure>
 
