@@ -51,7 +51,6 @@
         <div class="case__meta">
           <a class="btn btn--ghost btn--sm" href="https://github.com/merogith/DataAnalysis/blob/main/project-1-pharma-crm/analysis.ipynb" target="_blank" rel="noopener">View the notebook</a>
           <a class="btn btn--ghost btn--sm" href="https://github.com/merogith/DataAnalysis/tree/main/project-1-pharma-crm" target="_blank" rel="noopener">GitHub folder</a>
-          <a class="btn btn--ghost btn--sm" href="https://github.com/merogith/DataAnalysis/blob/main/project-1-pharma-crm/DASHBOARD_GUIDE.md" target="_blank" rel="noopener">Dashboard guide</a>
         </div>
       </header>
 
@@ -67,40 +66,26 @@
         <p><strong>About this data:</strong> this case study runs on synthetic data I generated myself, not a real company's records. The cleaning and analysis methods are real; the specific numbers are illustrative.</p>
       </div>
 
-      <!-- Dashboard preview — static chart exports from the analysis.
-           The interactive Tableau / Power BI build is documented in the guide linked below. -->
-      <section class="dash reveal" aria-label="Dashboard preview">
+      <!-- ============================================================
+           INTERACTIVE DASHBOARD — link out to Tableau Public
+           ============================================================ -->
+      <section class="dash reveal" aria-label="Interactive dashboard">
         <span class="dash__eyebrow">
           <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
-          Dashboard preview
+          Interactive dashboard
         </span>
         <h2 class="dash__title">Sales Performance dashboard</h2>
-        <p class="dash__lead">A BI view of the headline insight: <strong>more calls go with more scripts — so focus the next calls on the 99-doctor High-potential Growth segment.</strong> Slice by region and product to find where rep effort returns the most.</p>
+        <p class="dash__lead">A live BI view of the headline insight: <strong>more calls go with more scripts — so focus the next calls on the 99-doctor High-potential Growth segment.</strong> Slice by region and product to find where rep effort returns the most.</p>
         <ul class="dash__kpis">
           <li><b>r = 0.49</b><span>Calls ↔ scripts</span></li>
           <li><b>+5.5</b><span>Scripts / call</span></li>
           <li><b>99</b><span>Priority doctors</span></li>
           <li><b>4</b><span>HCP segments</span></li>
         </ul>
-        <div class="case__figgrid" style="margin:6px 0 18px;">
-          <figure class="case__figure">
-            <img src="../assets/charts/pharma-crm/01_scripts_by_product_region.png" alt="Prescription volume broken down by product and region" loading="lazy" />
-            <figcaption class="case__figcap">Prescription volume by product and region.</figcaption>
-          </figure>
-          <figure class="case__figure">
-            <img src="../assets/charts/pharma-crm/03_call_activity.png" alt="Distribution of rep call activity across the physician panel" loading="lazy" />
-            <figcaption class="case__figcap">How rep call activity is spread across the physician panel.</figcaption>
-          </figure>
-          <figure class="case__figure">
-            <img src="../assets/charts/pharma-crm/07_segment_summary.png" alt="Summary of the four physician segments by size and value" loading="lazy" />
-            <figcaption class="case__figcap">The four KMeans segments at a glance — size, value and responsiveness.</figcaption>
-          </figure>
-        </div>
         <div class="dash__actions">
-          <a class="btn btn--ghost" href="https://github.com/merogith/DataAnalysis/blob/main/project-1-pharma-crm/DASHBOARD_GUIDE.md" target="_blank" rel="noopener">How it's built →</a>
-          <a class="btn btn--ghost" href="https://github.com/merogith/DataAnalysis/blob/main/project-1-pharma-crm/analysis.ipynb" target="_blank" rel="noopener">View the notebook</a>
+          <a class="btn btn--primary dash__cta" href="https://public.tableau.com/views/PharmaCRMDashboard/Sheet1?:language=en-US&amp;:display_count=n&amp;:origin=viz_share_link" target="_blank" rel="noopener">View the live dashboard ↗</a>
         </div>
-        <p class="dash__note">Snapshots exported from the analysis (matplotlib / seaborn) on a star-schema dataset (fact_scripts + dim_rep/hcp/product/region); the interactive Tableau / Power BI build is documented in the dashboard guide.</p>
+        <p class="dash__note">Built in Tableau on a star-schema export (fact_scripts + dim_rep/hcp/product/region), published on Tableau Public.</p>
       </section>
 
       <section class="case__section reveal">

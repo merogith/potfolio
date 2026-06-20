@@ -51,7 +51,6 @@
         <div class="case__meta">
           <a class="btn btn--ghost btn--sm" href="https://github.com/merogith/DataAnalysis/blob/main/project-3-finance/analysis.ipynb" target="_blank" rel="noopener">View the notebook</a>
           <a class="btn btn--ghost btn--sm" href="https://github.com/merogith/DataAnalysis/tree/main/project-3-finance" target="_blank" rel="noopener">GitHub folder</a>
-          <a class="btn btn--ghost btn--sm" href="https://github.com/merogith/DataAnalysis/blob/main/project-3-finance/DASHBOARD_GUIDE.md" target="_blank" rel="noopener">Dashboard guide</a>
         </div>
       </header>
 
@@ -64,36 +63,26 @@
         <span class="stat"><b>≈ 0</b>stock–gold corr.</span>
       </div>
 
-      <!-- Dashboard preview — static chart exports from the analysis.
-           The interactive Tableau / Power BI build is documented in the guide linked below. -->
-      <section class="dash reveal" aria-label="Dashboard preview">
+      <!-- ============================================================
+           INTERACTIVE DASHBOARD — link out to Tableau Public
+           ============================================================ -->
+      <section class="dash reveal" aria-label="Interactive dashboard">
         <span class="dash__eyebrow">
           <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
-          Dashboard preview
+          Interactive dashboard
         </span>
         <h2 class="dash__title">Valuation &amp; Risk dashboard</h2>
-        <p class="dash__lead">A BI view of the same story: <strong>the market is near its most expensive level in history, and historically that has been followed by below-average returns.</strong> Filter by decade to explore real price, valuation, volatility and sector mix.</p>
+        <p class="dash__lead">A live BI view of the same story: <strong>the market is near its most expensive level in history, and historically that has been followed by below-average returns.</strong> Filter by decade to explore real price, valuation, volatility and sector mix.</p>
         <ul class="dash__kpis">
           <li><b>30.8</b><span>Current CAPE</span></li>
           <li><b>−81%</b><span>Worst drawdown</span></li>
           <li><b>~2.4%/yr</b><span>Real growth</span></li>
           <li><b>≈ 0</b><span>Stock–gold corr.</span></li>
         </ul>
-        <div class="case__figgrid" style="margin:6px 0 18px;">
-          <figure class="case__figure">
-            <img src="../assets/charts/stock-market/02_cape_history.png" alt="CAPE valuation across 150 years of market history" loading="lazy" />
-            <figcaption class="case__figcap">Valuation (CAPE) across 150 years — today's reading sits near the top of its range.</figcaption>
-          </figure>
-          <figure class="case__figure">
-            <img src="../assets/charts/stock-market/03_returns_and_vix.png" alt="Forward returns alongside market volatility (VIX)" loading="lazy" />
-            <figcaption class="case__figcap">Forward returns set against market volatility (VIX) over time.</figcaption>
-          </figure>
-        </div>
         <div class="dash__actions">
-          <a class="btn btn--ghost" href="https://github.com/merogith/DataAnalysis/blob/main/project-3-finance/DASHBOARD_GUIDE.md" target="_blank" rel="noopener">How it's built →</a>
-          <a class="btn btn--ghost" href="https://github.com/merogith/DataAnalysis/blob/main/project-3-finance/analysis.ipynb" target="_blank" rel="noopener">View the notebook</a>
+          <a class="btn btn--primary dash__cta" href="https://public.tableau.com/views/StockMarketDashboard_17819660307940/Sheet1?:language=en-US&amp;:display_count=n&amp;:origin=viz_share_link" target="_blank" rel="noopener">View the live dashboard ↗</a>
         </div>
-        <p class="dash__note">Snapshots exported from the analysis (matplotlib / seaborn) on a star-schema dataset (fact_market_monthly + dim_year + dim_sector); the interactive Tableau / Power BI build is documented in the dashboard guide.</p>
+        <p class="dash__note">Built in Tableau on a star-schema export (fact_market_monthly + dim_year + dim_sector), published on Tableau Public.</p>
       </section>
 
       <section class="case__section reveal">
