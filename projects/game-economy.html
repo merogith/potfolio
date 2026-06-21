@@ -63,6 +63,7 @@
         <span class="card__tag card__tag--data">Data · Project 2 · synthetic data</span>
         <h1 class="case__title">Free-to-Play Game Economy &amp; Balance</h1>
         <p class="case__tagline">Is the economy balanced, which items are broken, and who actually pays for it?</p>
+        <p class="case__bottomline"><b>The short answer:</b> the economy is broadly balanced with a handful of overpowered items to rein in, and monetisation is small (only 5.8% ever pay) but predictable — a model flags likely payers from their first three days alone with AUC 0.80, so live-ops effort can be aimed where it converts.</p>
         <div class="case__meta">
           <a class="btn btn--ghost btn--sm" href="https://github.com/merogith/DataAnalysis/blob/main/project-2-game-economy/analysis.ipynb" target="_blank" rel="noopener">View the notebook</a>
           <a class="btn btn--ghost btn--sm" href="https://github.com/merogith/DataAnalysis/tree/main/project-2-game-economy" target="_blank" rel="noopener">GitHub folder</a>
@@ -143,7 +144,7 @@
           <figcaption class="case__figcap">About half of installs never return on day 1, the steepest part of the whole funnel.</figcaption>
         </figure>
 
-        <p>Monetisation is small but <strong>predictable</strong>: only 5.8% of players ever pay (ARPPU $15.61), but a logistic model predicts payers from first-3-day behaviour alone with <strong>AUC 0.80</strong> and ~74% accuracy.</p>
+        <p>Monetisation is small but <strong>predictable</strong>: only 5.8% of players ever pay (ARPPU $15.61), but a logistic model predicts payers from first-3-day behaviour alone with <strong>AUC 0.80</strong> — it ranks a random payer above a random non-payer about 80% of the time — and ~74% accuracy.</p>
         <figure class="case__figure">
           <img width="1302" height="466" src="../assets/charts/game-economy/08_payer_model.png" alt="ROC curve and feature importance for the logistic payer-prediction model" loading="lazy" />
           <figcaption class="case__figcap">Payers are sharply distinguished by early engagement, enough to target a fair early offer.</figcaption>
