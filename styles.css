@@ -172,7 +172,6 @@ main[tabindex="-1"]:focus { outline: none; }
 .hero__eyebrow { font-family: var(--mono); color: var(--accent-warm); font-size: .9rem; margin-bottom: 18px; letter-spacing: .01em; font-weight: 600; }
 .hero__title { font-size: clamp(2.1rem, 5.4vw, 3.5rem); font-weight: 560; letter-spacing: -0.015em; }
 .hero__lead { max-width: 620px; margin-top: 22px; font-size: clamp(1.02rem, 1.6vw, 1.18rem); color: var(--muted); }
-.hero__through { max-width: 620px; margin-top: 18px; font-size: clamp(1.02rem, 1.6vw, 1.18rem); color: var(--text); border-left: 2px solid var(--accent); padding-left: 16px; }
 
 .hero__badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .badge {
